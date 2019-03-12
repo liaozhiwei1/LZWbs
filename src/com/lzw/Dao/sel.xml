@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="a.b">
+	<select id="selOne" resultType="com.lzw.pojo.Data">
+		SELECT * FROM td_data ORDER BY time DESC LIMIT 1
+	</select>
+	
+	<insert id="insData" parameterType="com.lzw.pojo.Data">
+		INSERT Into td_data(temperature,pressure,nextTemperature,nextPressure) VALUES(#{temperature},#{pressure},#{nextTemperature},#{nextPressure})
+	</insert>
+</mapper>
