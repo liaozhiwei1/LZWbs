@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 import com.lzw.Dao.selins;
 import com.lzw.pojo.Data;
 
+import javax.rmi.ssl.SslRMIClientSocketFactory;
+
 public class server {
 	public Socket socket;
 	public server(){
@@ -59,8 +61,7 @@ class MyThread implements Runnable{
 				 str1.delete(0, x+1);
 				 b=temps.split("@");
 				for(int i=0;i<2;i++)
-				{	
-					System.out.println(b[i]);
+				{
 					 d = Pattern.matches("(\\d\\d*\\.?\\d*)", b[i]);
 					 if(!d)
 					 {
@@ -81,6 +82,7 @@ class MyThread implements Runnable{
 					da.setNextPressure(String.valueOf(df.format(nextPressure)));
 					da.setNextTemperature(String.valueOf(df.format(nextTemperature)));
 					sl.ins(da);
+					System.out.println(da);
 				}
 				
 			 }

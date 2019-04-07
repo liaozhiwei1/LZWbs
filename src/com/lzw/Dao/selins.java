@@ -36,6 +36,7 @@ public class selins {
 	public int ins(Data a){
 		SqlSession session=factory.openSession();
 		int d= session.insert("a.b.insData",a);
+		System.out.println(d);
 		session.commit();
 		session.close();
 		return d;
